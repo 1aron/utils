@@ -1,7 +1,7 @@
 <br>
 <div align="center">
 
-<p align="center">Byte-level Javascript utilities, supporting ESM, CommonJS, and Tree Shaking</p>
+<p align="center">Byte-level modern Javascript utilities, supporting ESM, CommonJS, and Tree Shaking</p>
 
 <p align="center">
     <a aria-label="overview" href="https://github.com/1aron/utils">

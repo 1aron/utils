@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "experimentalDecorators": true,
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "declaration": true,
+        "sourceMap": true,
+        "types": [
+            "node",
+            "jest"
+        ],
+        "lib": [
+            "esnext"
+        ]
+    },
+}

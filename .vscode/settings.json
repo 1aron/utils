@@ -1,0 +1,12 @@
+{
+    "yaml.format.singleQuote": true,
+    "javascript.format.semicolons": "remove",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "html.format.indentHandlebars": true,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+}

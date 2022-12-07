@@ -1,0 +1,22 @@
+{
+    "scripts": {
+        "install": "husky install && npm ls --link=true",
+        "build": "turbo run build",
+        "check": "npm run commit-check && turbo run test lint type-check --parallel",
+        "commit-check": "commitlint --from=HEAD~1 --verbose",
+        "test": "turbo run test --parallel",
+        "lint": "turbo run lint --parallel",
+        "type-check": "turbo run type-check",
+        "dev": "turbo run dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/1aron/utils.git"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "engines": {
+        "node": "^18"
+    }
+}

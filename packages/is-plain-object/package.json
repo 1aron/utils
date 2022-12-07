@@ -21,12 +21,11 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/1aron/utils.git",
-        "directory": "packages/extend"
+        "directory": "packages/is-plain-object"
     },
     "keywords": [
-        "extend",
-        "merge",
-        "deeply",
+        "object",
+        "is-plain-object",
         "utils"
     ],
     "sideEffects": false,

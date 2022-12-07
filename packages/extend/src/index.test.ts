@@ -5,8 +5,8 @@ describe('extend', function () {
     it('deeply extend', () => {
         expect(
             extend(
-                { a: 1, b: 2, c: { d: 3, e: 4 } },
-                { c: { d: [1, 2], f: 5 } }
+                { a: 1, b: 2, c: { d: [1, 2], e: 4 } },
+                { c: { d: { first: 'one', second: 'two' }, f: 5 } }
             )
         )
             .toEqual(

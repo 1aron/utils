@@ -97,6 +97,12 @@ describe('extend', function () {
             )
     })
 
+    it('skip non-plain obj source', function () {
+        expect(extend(undefined, { a: 1 }, null, { b: 2 }, 0, { c: 3 }, false, true)).toEqual({
+            a: 1, b: 2, c: 3
+        })
+    })
+
     it('should ignore undefined', function () {
         const a = { hello: 1 }
         const b = undefined

@@ -3,6 +3,7 @@ import aPlainObj from '../../a-plain-obj/src'
 export default function extend(...sources: any[]) {
     const result = {}
     for (const eachSource of sources) {
+        if (!aPlainObj(eachSource)) continue
         (function merge(target, source) {
             for (const key in source) {
                 const value = source[key]

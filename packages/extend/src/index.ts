@@ -1,23 +1,19 @@
-import isPlainObject from '../../is-plain-object/src'
+import aPlainObj from '../../a-plain-obj/src'
 
-export default function extend(...sources) {
-    return function extendTarget(parent, parentKey, sources) {
-        if (!sources.length) return parent
-        const eachTarget = parentKey ? parent[parentKey] : parent
-        const source = sources.shift()
-        if (isPlainObject(eachTarget)) {
-            for (const sourceKey in source) {
-                const sourceValue = source[sourceKey]
-                if (isPlainObject(sourceValue)) {
-                    if (!eachTarget[sourceKey]) eachTarget[sourceKey] = {}
-                    extendTarget(eachTarget, sourceKey, [sourceValue])
+export default function extend(...sources: any[]) {
+    const result = {}
+    for (const eachSource of sources) {
+        (function merge(target, source) {
+            for (const key in source) {
+                const value = source[key]
+                if (aPlainObj(value) && aPlainObj(target[key])) {
+                    target[key] = merge(target[key], value)
                 } else {
-                    eachTarget[sourceKey] = sourceValue
+                    target[key] = value
                 }
             }
-        } else {
-            parent[parentKey] = source
-        }
-        return extendTarget(parent, '', sources)
-    }({}, '', sources)
+            return target
+        })(result, eachSource)
+    }
+    return result
 }

@@ -1,5 +1,5 @@
 {
-    "name": "to.extend",
+    "name": "to-extend",
     "scripts": {
         "build": "aron pack",
         "dev": "npm run build -- --watch",

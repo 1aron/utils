@@ -1,7 +1,7 @@
 <br>
 <div align="center">
 
-<p align="center">Is it a pure object? ~100B</p>
+<p align="center">Is it a plain object? ~100B</p>
 
 <p align="center">
     <a aria-label="overview" href="https://github.com/1aron/utils">
@@ -18,11 +18,11 @@
             <img alt="NPM Version" src="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github">
         </picture>
     </a>
-    <a aria-label="NPM Package" href="https://www.npmjs.com/package/is.plain-object">
+    <a aria-label="NPM Package" href="https://www.npmjs.com/package/a-plain-obj">
         <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/is.plain-object?color=212022&label=%20&logo=npm&style=for-the-badge">
-            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/is.plain-object?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
-            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/is.plain-object?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
+            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/a-plain-obj?color=212022&label=%20&logo=npm&style=for-the-badge">
+            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/a-plain-obj?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
+            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/a-plain-obj?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
         </picture>
     </a>
     <a aria-label="Follow @aron1tw" href="https://twitter.com/aron1tw">
@@ -48,12 +48,12 @@
 ## Getting Started
 
 ```bash
-npm install is.plain-object
+npm install a-plain-obj
 ```
 
 ## Usage
 ```js
-import isPlainObject from 'is.plain-object'
+import isPlainObject from 'a-plain-obj'
 
 isPlainObject({})
 // true

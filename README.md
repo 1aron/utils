@@ -18,13 +18,6 @@
             <img alt="NPM Version" src="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github">
         </picture>
     </a>
-    <a aria-label="NPM Package" href="https://www.npmjs.com/package/is.plain-object">
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/is.plain-object?color=212022&label=%20&logo=npm&style=for-the-badge">
-            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/is.plain-object?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
-            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/is.plain-object?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
-        </picture>
-    </a>
     <a aria-label="Follow @aron1tw" href="https://twitter.com/aron1tw">
         <picture>
             <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/static/v1?label=%20&message=twitter&color=212022&logo=twitter&style=for-the-badge">
@@ -51,7 +44,7 @@
 - [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
 
 ##### Distinction
-- [is-plain-object](https://github.com/1aron/utils/tree/main/packages/is-plain-object) — Is it a pure object? ~100B
+- [a-plain-obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B
 
 <br>
 

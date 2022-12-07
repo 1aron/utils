@@ -53,31 +53,31 @@ npm install a-plain-obj
 
 ## Usage
 ```js
-import isPlainObject from 'a-plain-obj'
+import aPlainObj from 'a-plain-obj'
 
-isPlainObject({})
+aPlainObj({})
 // true
 ```
 
 ## Overview
 ```js
 // true
-isPlainObject(Object.create({}))
-isPlainObject(Object.create(Object.prototype))
-isPlainObject({ foo: 'bar' })
-isPlainObject({})
-isPlainObject(Object.create(null))
+aPlainObj(Object.create({}))
+aPlainObj(Object.create(Object.prototype))
+aPlainObj({ foo: 'bar' })
+aPlainObj({})
+aPlainObj(Object.create(null))
 
 // false
 function Foo() { this.abc = {} }
-isPlainObject(/foo/)
-isPlainObject(function () { })
-isPlainObject(1)
-isPlainObject(['foo', 'bar'])
-isPlainObject([])
-isPlainObject(new Foo)
-isPlainObject(null)
-isPlainObject(undefined)
+aPlainObj(/foo/)
+aPlainObj(function () { })
+aPlainObj(1)
+aPlainObj(['foo', 'bar'])
+aPlainObj([])
+aPlainObj(new Foo)
+aPlainObj(null)
+aPlainObj(undefined)
 ```
 
 <br>

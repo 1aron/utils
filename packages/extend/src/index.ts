@@ -1,22 +1,23 @@
 import isPlainObject from '../../is-plain-object/src'
 
 export default function extend(...sources) {
-    return extendTarget({}, ...sources)
-}
-
-function extendTarget(target, ...sources) {
-    if (!sources.length) return target
-    const source = sources.shift()
-    for (const key in source) {
-        const sourceValue = source[key]
-        if (isPlainObject(sourceValue)) {
-            if (!target[key]) target[key] = {}
-            extendTarget(target[key], sourceValue)
+    return function extendTarget(parent, parentKey, sources) {
+        if (!sources.length) return parent
+        const eachTarget = parentKey ? parent[parentKey] : parent
+        const source = sources.shift()
+        if (isPlainObject(eachTarget)) {
+            for (const sourceKey in source) {
+                const sourceValue = source[sourceKey]
+                if (isPlainObject(sourceValue)) {
+                    if (!eachTarget[sourceKey]) eachTarget[sourceKey] = {}
+                    extendTarget(eachTarget, sourceKey, [sourceValue])
+                } else {
+                    eachTarget[sourceKey] = sourceValue
+                }
+            }
         } else {
-            console.log(sourceValue)
-            target[key] = sourceValue
+            parent[parentKey] = source
         }
-    }
-    return extendTarget(target, ...sources)
+        return extendTarget(parent, '', sources)
+    }({}, '', sources)
 }
-

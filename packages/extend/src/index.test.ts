@@ -1,18 +1,18 @@
-import extend from './index'
+import extend from './'
 
 describe('extend', function () {
 
-    it('deeply extend', () => {
-        expect(
-            extend(
-                { a: 1, b: 2, c: { d: 3, e: 4 } },
-                { c: { d: 0, f: 5 } }
-            )
-        )
-            .toEqual(
-                { a: 1, b: 2, c: { d: 0, e: 4, f: 5 } }
-            )
-    })
+    // it('deeply extend', () => {
+    //     expect(
+    //         extend(
+    //             { a: 1, b: 2, c: { d: 3, e: 4 } },
+    //             { c: { d: 0, f: 5 } }
+    //         )
+    //     )
+    //         .toEqual(
+    //             { a: 1, b: 2, c: { d: 0, e: 4, f: 5 } }
+    //         )
+    // })
 
     // it('should ignore undefined', function () {
     //     const a = { hello: 1 }
@@ -33,33 +33,33 @@ describe('extend', function () {
     // })
 
     // it('can extend on 1 level', function () {
-    //     const a = { hello: 1 }
-    //     const b = { world: 2 }
-    //     extend(a, b)
-    //     expect(a).toEqual({
-    //         hello: 1,
-    //         world: 2
-    //     })
+    //     expect(extend(
+    //         { hello: 1 },
+    //         { world: 2 }
+    //     )).toEqual(
+    //         { hello: 1, world: 2 }
+    //     )
     // })
 
     // it('can extend on 2 levels', function () {
-    //     const a = { person: { name: 'John' } }
-    //     const b = { person: { age: 30 } }
-    //     extend(a, b)
-    //     expect(a).toEqual({
+    //     expect(extend(
+    //         { person: { name: 'John' } },
+    //         { person: { age: 30 } })
+    //     ).toEqual({
     //         person: { name: 'John', age: 30 }
     //     })
     // })
 
-    // it('can extend with Buffer values', function () {
-    //     const a = { hello: 1 }
-    //     const b = { value: new Buffer('world') }
-    //     extend(a, b)
-    //     expect(a).toEqual({
-    //         hello: 1,
-    //         value: new Buffer('world')
-    //     })
-    // })
+    it('can extend with Buffer values', function () {
+        expect(extend(
+            { hello: 1 },
+            { value: new Buffer('world') }
+        )
+        ).toEqual({
+            hello: 1,
+            value: new Buffer('world')
+        })
+    })
 
     // it('doesn\'t change sources', function () {
     //     const a = { a: [1] }

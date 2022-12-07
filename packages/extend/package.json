@@ -1,8 +1,11 @@
 {
     "name": "utils.extend",
     "scripts": {
+        "build": "aron pack",
+        "dev": "npm run build -- --watch",
         "test": "jest",
-        "lint": "eslint"
+        "type-check": "tsc --noEmit",
+        "lint": "eslint src"
     },
     "license": "MIT",
     "description": "Deeply extend objects",

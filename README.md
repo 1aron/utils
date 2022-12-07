@@ -36,10 +36,6 @@
 
 </div>
 
-<br>
-
-## Utilities
-
 ##### Manipulation
 - [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
 

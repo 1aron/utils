@@ -47,7 +47,7 @@
 
 ## Getting Started
 
-```
+```bash
 npm install utils.is-plain-object
 ```
 

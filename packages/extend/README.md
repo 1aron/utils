@@ -54,7 +54,7 @@
 
 ## Getting Started
 
-```
+```bash
 npm install utils.extend
 ```
 

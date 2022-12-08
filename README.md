@@ -36,11 +36,22 @@
 
 </div>
 
-##### Manipulation
+<br>
+
+### Cross-platform
+
+##### Object
 - [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
 
-##### Distinction
-- [a-plain-obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B
+##### Is
+- [a plain obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B
+
+### Node.js
+
+##### Package.json
+- [get package](https://github.com/1aron/utils/tree/main/packages/get-package) — Get a package
+- [get workspace paths](https://github.com/1aron/utils/tree/main/packages/get-workspace-paths) — Conditionally get all workspace paths
+- [get workspace packages](https://github.com/1aron/utils/tree/main/packages/get-workspace-packages) — Conditionally get all workspace packages
 
 <br>
 

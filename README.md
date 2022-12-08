@@ -38,7 +38,7 @@
 
 <br>
 
-### Cross-platform
+## Cross-platform
 
 ##### Object
 - [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
@@ -46,7 +46,7 @@
 ##### Is
 - [a plain obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B
 
-### Node.js
+## Node.js
 
 ##### Package.json
 - [get package](https://github.com/1aron/utils/tree/main/packages/get-package) — Get a package

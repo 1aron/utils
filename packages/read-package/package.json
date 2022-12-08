@@ -1,5 +1,5 @@
 {
-    "name": "to-extend",
+    "name": "to-read-package",
     "scripts": {
         "build": "aron pack",
         "dev": "npm run build -- --watch",
@@ -8,7 +8,7 @@
         "lint": "eslint src"
     },
     "license": "MIT",
-    "description": "Deeply extend objects",
+    "description": "Read a package.json content",
     "author": {
         "name": "Aron",
         "email": "i@aron.tw",
@@ -21,12 +21,12 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/1aron/utils.git",
-        "directory": "packages/extend"
+        "directory": "packages/get-package"
     },
     "keywords": [
-        "extend",
-        "merge",
-        "deeply",
+        "package",
+        "json",
+        "packagejson",
         "utils"
     ],
     "sideEffects": false,
@@ -46,6 +46,6 @@
         "dist"
     ],
     "dependencies": {
-        "a-plain-obj": ""
+        "fs-extra": "^11.1.0"
     }
 }

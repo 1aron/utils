@@ -1,4 +1,4 @@
-import aPlainObj from '../../a-plain-obj/src'
+import aPlainObj from 'a-plain-obj'
 
 export default function extend(...sources: any[]) {
     const result = {}

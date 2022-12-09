@@ -45,6 +45,11 @@
 
 <br>
 
+- Read `.workspaces` of package.json in current working directory by default
+- Workspaces in node_modules are excluded by default
+
+<br>
+
 ## Getting Started
 
 ```bash
@@ -78,8 +83,6 @@ Your monorepo usually looks like this:
 
 ## Usage
 `queryWorkspaces(patterns?, options?): string[]`
-
-By default, read `.workspaces` of package.json in current working directory
 ```js
 import queryWorkspaces from 'to-query-workspaces'
 

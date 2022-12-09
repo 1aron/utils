@@ -11,12 +11,11 @@ export default function queryWorkspaces(
         cwd: process.cwd(),
         ignore: ['**/node_modules/**']
     }, options)
-    return fg.sync(
-        (patterns?.length
-            ? patterns
-            : readPackage(undefined, { cwd: options.cwd })?.workspaces
-        )?.map((eachWorkspace) => eachWorkspace + '/package.json')
-        , options
-    )
-        ?.map((eachWorkspace) => eachWorkspace.replace('/package.json', ''))
+    patterns = patterns?.length
+        ? patterns
+        : readPackage(undefined, { cwd: options.cwd })?.workspaces
+    return patterns?.length
+        ? fg.sync(patterns.map((eachWorkspace) => eachWorkspace + '/package.json'), options)
+            .map((eachWorkspace) => eachWorkspace.replace('/package.json', ''))
+        : []
 }

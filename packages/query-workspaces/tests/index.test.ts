@@ -12,6 +12,11 @@ it('query workspaces by cwd package.json', () => {
         .toEqual(['packages/a', 'packages/b', 'packages/b/bb'])
 })
 
+it('query for non-existing workspaces', () => {
+    expect(queryWorkspaces(undefined, { cwd: path.join(__dirname, 'packages') }))
+        .toEqual([])
+})
+
 it('exclude workspaces without package.json', () => {
     expect(queryWorkspaces(undefined, { cwd: __dirname }))
         .not.toContain('packages/c')

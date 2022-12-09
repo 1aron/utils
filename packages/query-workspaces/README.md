@@ -51,7 +51,9 @@
 npm install to-query-workspaces
 ```
 
-## Usage
+## Preparation
+Your monorepo usually looks like this:
+
 ```diff
 .
 ├── package.json
@@ -74,6 +76,7 @@ npm install to-query-workspaces
 }
 ```
 
+## Usage
 `queryWorkspaces(patterns?, options?): string[]`
 
 By default, read `.workspaces` of package.json in current working directory

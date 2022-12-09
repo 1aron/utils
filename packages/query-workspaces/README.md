@@ -1,7 +1,7 @@
 <br>
 <div align="center">
 
-<p align="center">Byte-level modern Javascript utilities, supporting ESM, CommonJS, and Tree Shaking</p>
+<p align="center">Query workspaces with package.json</p>
 
 <p align="center">
     <a aria-label="overview" href="https://github.com/1aron/utils">
@@ -16,6 +16,13 @@
             <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=212022&label=&style=for-the-badge&logo=github&logoColor=fff">
             <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github&logoColor=%23000">
             <img alt="NPM Version" src="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github">
+        </picture>
+    </a>
+    <a aria-label="NPM Package" href="https://www.npmjs.com/package/to-read-package">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/to-read-package?color=212022&label=%20&logo=npm&style=for-the-badge">
+            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/to-read-package?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
+            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/to-read-package?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
         </picture>
     </a>
     <a aria-label="Follow @aron1tw" href="https://twitter.com/aron1tw">
@@ -38,20 +45,56 @@
 
 <br>
 
-## Cross-platform
+## Getting Started
 
-##### Object
-- [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
+```bash
+npm install to-query-workspaces
+```
 
-##### Is
-- [a plain obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B
+## Usage
+```diff
+.
+├── package.json
+└── packages
++   ├─── a
+    │    └─── package.json
++   ├─── b
+    │    ├─── node_modules
+    │    │    └─── fake-module
+    │    │         └─── package.json
++   │    ├─── bb
+    │    │    └─── package.json
+    │    └─── package.json
+    └─── c
+```
+./packages.json
+```json
+{
+    "workspaces": ["packages/**"]
+}
+```
 
-## Node.js
+`queryWorkspaces(patterns?, options?): string[]`
 
-##### Package.json
-- [read package](https://github.com/1aron/utils/tree/main/packages/read-package) — Read a package.json content
-- [read workspace packages](https://github.com/1aron/utils/tree/main/packages/read-workspace-packages) — Conditionally read workspace package.json contents
-- [query workspaces](https://github.com/1aron/utils/tree/main/packages/query-workspaces) — Query workspaces with package.json
+By default, read `.workspaces` of package.json in current working directory
+```js
+import queryWorkspaces from 'to-query-workspaces'
+
+const workspaces = queryWorkspaces()
+// ['packages/a', 'packages/b', 'packages/b/bb']
+
+const workspaces = queryWorkspaces(['packages/*'])
+// ['packages/a', 'packages/b']
+```
+
+## Options
+Inherited from [fast-glob options](https://github.com/mrmlnc/fast-glob#options-3)
+```js
+{
+    cwd: process.cwd(),
+    ignore: ['**/node_modules/**']
+}
+```
 
 <br>
 

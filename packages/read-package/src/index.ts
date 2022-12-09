@@ -1,11 +1,11 @@
 import fs from 'fs-extra'
-import path from 'path'
+import upath from 'upath'
 
 export default function readPackage(
     fileName = './package.json',
     { cwd = process.cwd() }: { cwd?: string } = {}
 ): any {
     return fs.readJSONSync(
-        cwd ? path.resolve(cwd, fileName) : fileName,
+        cwd ? upath.resolve(cwd, fileName) : fileName,
         { throws: false })
 }

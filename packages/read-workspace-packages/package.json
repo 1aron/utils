@@ -1,5 +1,5 @@
 {
-    "name": "to-query-workspaces",
+    "name": "to-read-workspace-packages",
     "scripts": {
         "build": "aron pack --platform node",
         "dev": "npm run build -- --watch",
@@ -8,7 +8,7 @@
         "lint": "eslint src"
     },
     "license": "MIT",
-    "description": "Query workspaces with package.json",
+    "description": "Read workspace package.json contents",
     "author": {
         "name": "Aron",
         "email": "i@aron.tw",
@@ -21,14 +21,15 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/1aron/utils.git",
-        "directory": "packages/query-workspaces"
+        "directory": "packages/read-workspace-packages"
     },
     "keywords": [
         "package",
         "json",
         "packagejson",
-        "utils",
         "workspaces",
+        "utils",
+        "monorepo",
         "npm",
         "pnpm",
         "yarn"
@@ -51,7 +52,8 @@
     ],
     "dependencies": {
         "fast-glob": "^3.2.12",
+        "to-query-workspaces": "",
         "to-read-package": "",
-        "to-extend": ""
+        "upath": "^2.0.1"
     }
 }

@@ -18,11 +18,11 @@
             <img alt="NPM Version" src="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github">
         </picture>
     </a>
-    <a aria-label="NPM Package" href="https://www.npmjs.com/package/to-read-package">
+    <a aria-label="NPM Package" href="https://www.npmjs.com/package/to-query-workspaces">
         <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/to-read-package?color=212022&label=%20&logo=npm&style=for-the-badge">
-            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/to-read-package?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
-            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/to-read-package?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
+            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/to-query-workspaces?color=212022&label=%20&logo=npm&style=for-the-badge">
+            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/to-query-workspaces?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
+            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/to-query-workspaces?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
         </picture>
     </a>
     <a aria-label="Follow @aron1tw" href="https://twitter.com/aron1tw">
@@ -45,8 +45,8 @@
 
 <br>
 
-- Read `.workspaces` of package.json in current working directory by default
-- Workspaces in node_modules are excluded by default
+- By default, read `.workspaces` of package.json in the current working directory
+- By default, workspaces in node_modules are excluded
 
 <br>
 
@@ -74,7 +74,7 @@ Your monorepo usually looks like this:
     │    └─── package.json
     └─── c
 ```
-./packages.json
+./package.json
 ```json
 {
     "workspaces": ["packages/**"]

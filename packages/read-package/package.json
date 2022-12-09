@@ -27,7 +27,11 @@
         "package",
         "json",
         "packagejson",
-        "utils"
+        "utils",
+        "monorepo",
+        "npm",
+        "pnpm",
+        "yarn"
     ],
     "sideEffects": false,
     "main": "./dist/index.cjs",
@@ -46,6 +50,7 @@
         "dist"
     ],
     "dependencies": {
-        "fs-extra": "^11.1.0"
+        "fs-extra": "^11.1.0",
+        "upath": "^2.0.1"
     }
 }

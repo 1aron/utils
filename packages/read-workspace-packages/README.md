@@ -1,7 +1,7 @@
 <br>
 <div align="center">
 
-<p align="center">Byte-level modern Javascript utilities, supporting ESM, CommonJS, and Tree Shaking</p>
+<p align="center">Read workspace package.json contents</p>
 
 <p align="center">
     <a aria-label="overview" href="https://github.com/1aron/utils">
@@ -16,6 +16,13 @@
             <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=212022&label=&style=for-the-badge&logo=github&logoColor=fff">
             <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github&logoColor=%23000">
             <img alt="NPM Version" src="https://img.shields.io/github/v/release/1aron/utils?include_prereleases&color=f6f7f8&label=&style=for-the-badge&logo=github">
+        </picture>
+    </a>
+    <a aria-label="NPM Package" href="https://www.npmjs.com/package/to-read-package">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/to-read-package?color=212022&label=%20&logo=npm&style=for-the-badge">
+            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dm/to-read-package?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
+            <img alt="NPM package ( download / month )" src="https://img.shields.io/npm/dm/to-read-package?color=f6f7f8&label=%20&logo=npm&style=for-the-badge">
         </picture>
     </a>
     <a aria-label="Follow @aron1tw" href="https://twitter.com/aron1tw">
@@ -38,27 +45,75 @@
 
 <br>
 
-## Cross-platform
+- By default, read workspace packages by package.json `.workspaces` in the current working directory
+- By default, workspace packages in node_modules are excluded
 
-##### Object
-- [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
+<br>
 
-##### Is
-- [a plain obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B
+## Getting Started
 
-## Node.js
+```bash
+npm install to-read-workspace-packages
+```
 
-##### Package.json
-- [read package](https://github.com/1aron/utils/tree/main/packages/read-package) — Read a package.json content
-- [read workspace packages](https://github.com/1aron/utils/tree/main/packages/read-workspace-packages) — Read workspace package.json contents
-- [query workspaces](https://github.com/1aron/utils/tree/main/packages/query-workspaces) — Query workspaces with package.json
+## Preparation
+Your monorepo usually looks like this:
 
-## Recommendation
-Some of the above node utilities use these well-known packages to improve your development experience, including built-in error handling, cross-platform compatibility, and shared logic to reduce code:
-- [upath](https://github.com/anodynos/upath) — A drop-in replacement / proxy to nodejs's path to improve reliability
-- [fs-extra](https://github.com/jprichardson/node-fs-extra) — Node.js: extra methods for the fs object like `copy()`, `remove()`, `mkdirs()` for better DX
-- [fast-glob](https://github.com/mrmlnc/fast-glob) — It's a very fast and efficient glob library for Node.js
+```diff
+.
+├── package.json
+└── packages
+    ├─── a
+    │    └─── package.json
+    ├─── b
+    │    ├─── node_modules
+    │    │    └─── fake-module
+    │    │         └─── package.json
+    │    ├─── bb
+    │    │    └─── package.json
+    │    └─── package.json
+    ├─── c
+    └─── d
+         └─── package.json
+```
+./package.json
+```json
+{
+    "workspaces": ["packages/**"]
+}
+```
+./packages/d/package.json
+```json
+{
+    "name": "d",
+    "private": true
+}
+```
 
+## Usage
+`readWorkspacePackages(patterns?, options?): any[]`
+```js
+import readWorkspacePackages from 'to-read-workspace-packages'
+
+const packages = readWorkspacePackages()
+// [{ name: 'a' }, { name: 'b' }, { name: 'd', private: true }, { name: 'bb' }]
+
+const packages = readWorkspacePackages(['packages/*'])
+// [{ name: 'a' }, { name: 'b' }, { name: 'd', private: true }]
+
+const publicPackages = readWorkspacePackages()
+    .fiter((eachWorkspacePackage) => !eachWorkspacePackage.private)
+// [{ name: 'a' }, { name: 'b' }, { name: 'bb' }]
+```
+
+## Options
+Inherited from [fast-glob options](https://github.com/mrmlnc/fast-glob#options-3)
+```js
+{
+    cwd: process.cwd(),
+    ignore: ['**/node_modules/**']
+}
+```
 
 <br>
 

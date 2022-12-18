@@ -48,6 +48,12 @@
 
 ## Node.js
 
+##### Module
+- [cross import](https://github.com/1aron/utils/tree/main/packages/cross-import) — Import .ts, .mjs, .cjs files across environments as JavaScript modules
+
+##### File
+- [read file](https://github.com/1aron/utils/tree/main/packages/read-file) — Read a file content by glob patterns
+
 ##### Package.json
 - [read package](https://github.com/1aron/utils/tree/main/packages/read-package) — Read a package.json content
 - [read workspace packages](https://github.com/1aron/utils/tree/main/packages/read-workspace-packages) — Read workspace package.json contents

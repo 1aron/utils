@@ -1,13 +1,11 @@
-import aPlainObj from 'a-plain-obj'
-
 export default function extend(...sources: any[]) {
     const result = {}
     for (const eachSource of sources) {
-        if (!aPlainObj(eachSource)) continue
+        if (!isObject(eachSource)) continue
         (function merge(target, source) {
             for (const key in source) {
                 const value = source[key]
-                if (aPlainObj(value) && aPlainObj(target[key])) {
+                if (isObject(value) && isObject(target[key])) {
                     target[key] = merge(target[key], value)
                 } else {
                     target[key] = value
@@ -17,4 +15,8 @@ export default function extend(...sources: any[]) {
         })(result, eachSource)
     }
     return result
+}
+
+function isObject(x: any) {
+    return typeof x === 'object' && x !== null && !Array.isArray(x)
 }

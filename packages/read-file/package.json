@@ -1,5 +1,5 @@
 {
-    "name": "to-read-package",
+    "name": "to-read-file",
     "scripts": {
         "build": "aron pack --platform node",
         "dev": "npm run build -- --watch",
@@ -8,7 +8,7 @@
         "lint": "eslint src"
     },
     "license": "MIT",
-    "description": "Read a package.json content",
+    "description": "Read a file content by glob patterns",
     "author": {
         "name": "Aron",
         "email": "i@aron.tw",
@@ -21,17 +21,14 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/1aron/utils.git",
-        "directory": "packages/read-package"
+        "directory": "packages/to-read-file"
     },
     "keywords": [
-        "package",
-        "json",
-        "packagejson",
-        "utils",
-        "monorepo",
-        "npm",
-        "pnpm",
-        "yarn"
+        "read",
+        "read-file",
+        "fs",
+        "glob",
+        "utils"
     ],
     "sideEffects": false,
     "main": "./dist/index.cjs",
@@ -50,7 +47,11 @@
         "dist"
     ],
     "dependencies": {
+        "fast-glob": "^3.2.12",
         "fs-extra": "^11.1.0",
         "upath": "^2.0.1"
+    },
+    "devDependencies": {
+        "dedent": "^0.7.0"
     }
 }

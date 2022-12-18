@@ -254,3 +254,27 @@ test('semantic-release-config-aron', () => {
             }
         })
 })
+
+it('prevent source contamination', () => {
+    const source = {
+        1: {
+            2: {
+                3: true
+            }
+        }
+    }
+
+    extend(source, {
+        1: {
+            4: true
+        }
+    })
+
+    expect(source).toEqual({
+        1: {
+            2: {
+                3: true
+            }
+        }
+    })
+})

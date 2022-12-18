@@ -8,7 +8,7 @@ export default function extend(...sources: any[]) {
                 if (isObject(value) && isObject(target[key])) {
                     target[key] = merge(target[key], value)
                 } else {
-                    target[key] = value
+                    target[key] = JSON.parse(JSON.stringify(value))
                 }
             }
             return target

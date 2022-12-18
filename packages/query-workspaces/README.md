@@ -34,9 +34,9 @@
     </a>
     <a aria-label="Github Actions" href="https://github.com/1aron/utils/actions/workflows/release.yml">
         <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/workflow/status/1aron/utils/Release?label=%20&message=twitter&color=212022&logo=githubactions&style=for-the-badge">
-            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/workflow/status/1aron/utils/Release?label=%20&message=twitter&color=f6f7f8&logo=githubactions&style=for-the-badge&logoColor=%23000">
-            <img alt="Github release actions" src="https://img.shields.io/github/workflow/status/1aron/utils/Release?label=%20&message=twitter&color=f6f7f8&logo=githubactions&style=for-the-badge&logoColor=%23000">
+            <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/1aron/utils/release.yml?branch=main&label=%20&message=twitter&color=212022&logo=githubactions&style=for-the-badge">
+            <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/actions/workflow/status/1aron/utils/release.yml?branch=main&label=%20&message=twitter&color=f6f7f8&logo=githubactions&style=for-the-badge&logoColor=%23000">
+            <img alt="Github release actions" src="https://img.shields.io/github/actions/workflow/status/1aron/utils/release.yml?branch=main&label=%20&message=twitter&color=f6f7f8&logo=githubactions&style=for-the-badge&logoColor=%23000">
         </picture>
     </a>
 </p>

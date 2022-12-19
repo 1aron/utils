@@ -1,5 +1,5 @@
 import upath from 'upath'
-import _eval from 'eval'
+import requireFromString from 'require-from-string'
 import fg from 'fast-glob'
 import extend from 'to-extend'
 import { buildSync } from 'esbuild'
@@ -23,6 +23,5 @@ export default function crossImport(
         write: false
     })
     const { text } = buildResult.outputFiles[0]
-    const m = _eval(text, upath.changeExt(resolvedFilePath, '.js')) as NodeModule
-    return m
+    return requireFromString(text, upath.changeExt(resolvedFilePath, '.js'))
 }

@@ -55,8 +55,8 @@
     ],
     "dependencies": {
         "esbuild": "^0.16.9",
-        "eval": "^0.1.8",
         "fast-glob": "^3.2.12",
+        "require-from-string": "^2.0.2",
         "to-extend": "",
         "upath": "^2.0.1"
     }

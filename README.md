@@ -40,7 +40,7 @@
 ## Cross-platform
 
 ##### Object
-- [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~200B
+- [extend](https://github.com/1aron/utils/tree/main/packages/extend) — Deeply extend objects ~380B
 
 ##### Is
 - [a plain obj](https://github.com/1aron/utils/tree/main/packages/a-plain-obj) — Is it a plain object? ~100B

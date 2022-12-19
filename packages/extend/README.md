@@ -1,7 +1,7 @@
 <br>
 <div align="center">
 
-<p align="center">Deeply extend objects ~200B</p>
+<p align="center">Deeply extend objects ~380B</p>
 
 <p align="center">
     <a aria-label="overview" href="https://github.com/1aron/utils">

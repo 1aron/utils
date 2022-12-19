@@ -138,14 +138,14 @@ it('can extend on 2 levels', function () {
 })
 
 it('can extend and overrided by non-plain object', function () {
-    const a = { hello: 1 }
+    const a = { hello: 1, value: {} }
     const b = { value: Buffer.from('world') }
     const result: any = extend(a, b)
     expect(result).toEqual({
         hello: 1,
         value: Buffer.from('world')
     })
-    expect(b.value === result.value).toBeTruthy()
+    expect(b.value !== result.value).toBeTruthy()
 })
 
 it('doesn\'t change sources', function () {

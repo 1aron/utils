@@ -1,4 +1,4 @@
-const _Buffer = typeof Buffer !== undefined ? Buffer : null
+const _Buffer = typeof Buffer !== 'undefined' ? Buffer : null
 
 function isSpecificValue(val) {
     return (

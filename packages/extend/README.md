@@ -1,7 +1,7 @@
 <br>
 <div align="center">
 
-<p align="center">Deeply extend objects ~380B</p>
+<p align="center">Deeply extend objects ~400B</p>
 
 <p align="center">
     <a aria-label="overview" href="https://github.com/1aron/utils">
@@ -117,6 +117,10 @@ expect(
         j: [3, 4]
     })
 ```
+
+## Inspiration
+
+- [deep-extend](https://www.npmjs.com/package/deep-extend) — Recursive extend module
 
 <br>
 

@@ -1,13 +1,15 @@
+const _Buffer = typeof Buffer !== undefined ? Buffer : null
+
 function isSpecificValue(val) {
     return (
-        val instanceof Buffer
+        _Buffer && val instanceof _Buffer
         || val instanceof Date
         || val instanceof RegExp
     ) ? true : false
 }
 
 function cloneSpecificValue(val) {
-    if (val instanceof Buffer) {
+    if (_Buffer && val instanceof Buffer) {
         const x = Buffer.alloc(val.length)
         val.copy(x)
         return x

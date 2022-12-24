@@ -45,12 +45,14 @@
 
 <br>
 
-- Import `.ts` in `.js`
-- Import `.mjs` in `.cjs`
-- Import `.cjs` in `.mjs`
-- ...
+## Solved Problems
 
-<br>
+As far as is generally known:
+- Cannot import ESM modules in CJS
+- Cannot use ESM dynamic import in CJS
+- Cannot use CJS dynamic require in ESM
+- Cannot import .ts config in .js .cjs .mjs
+- Cannot mix .js .cjs .mjs packages
 
 ## Getting Started
 
